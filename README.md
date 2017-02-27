@@ -10,3 +10,6 @@ Iris-setosa
 Iris-versicolor
 
 Iris-virginica
+
+
+sumber dataset : http://archive.ics.uci.edu/ml/datasets/Iris

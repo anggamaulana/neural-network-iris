@@ -33,7 +33,10 @@ def train(x, t, V, W, bv, bw):
     dV = np.outer(x, Ev)
 
     # cross-entropy loss
-    loss = -np.mean ( t * np.log(Y) + (1 - t) * np.log(1 - Y) )
+    # loss = -np.mean ( t * np.log(Y) + (1 - t) * np.log(1 - Y) )
+
+    #euclidean square, jarak euclidean antara hasil dan fakta E(y,y')
+    loss =0.5*(np.sum(np.power(Y-t,2)))
 
     # Note that we use error for each layer as a gradient
     # for biases
@@ -54,8 +57,6 @@ def predict(x, V, W, bv, bw):
         return 'tidak tahu'
 
 # Setup initial parameters
-# Note that initialization is cruxial for first-order methods!
-
 V = np.random.normal(scale=0.1, size=(n_in, n_hidden))
 W = np.random.normal(scale=0.1, size=(n_hidden, n_out))
 
@@ -94,6 +95,9 @@ for epoch in range(500):
                 epoch, np.mean( err ), time.clock()-t0 )
 
 # Hasil model
+print "PREDIKSI HASIL CONTOH DATA INDEX 1 dan 139"
+print "prediksi baris ke 1: "
 print predict(datatraining[0], *params)
+print "prediksi baris ke 139: "
 print predict(datatraining[140], *params)
 

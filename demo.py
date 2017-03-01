@@ -1,7 +1,7 @@
 import numpy as np
 import time
 
-# formasi NN 3-4-3 untuk MLP
+# formasi NN 4-4-3 untuk MLP
 n_hidden = 4
 n_in = 4
 n_out = 3

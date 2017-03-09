@@ -42,7 +42,7 @@ def train(x, t, V, W, bv, bw):
     print "Z"
     print Z
     print "Z"
-     print "Ew"
+    print "Ew"
     print Ew
     print "Ew"
     dW = np.outer(Z, Ew)

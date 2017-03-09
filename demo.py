@@ -95,31 +95,7 @@ params = [V,W,bv,bw]
 datatraining = np.loadtxt('iris.data-feature.txt',delimiter=',')
 datalabel = np.loadtxt('iris.data-feature-label.txt',delimiter=',')
 
-# kelas1=datasumber[0:40,:]
-# kelas2=datasumber[50:90,:]
-# kelas3=datasumber[100:140,:]
 
-# label1=datasumberlabel[0:40,:]
-# label2=datasumberlabel[50:90,:]
-# label3=datasumberlabel[100:140,:]
-
-# # Test data
-# kelastest1=datasumber[40:50,:]
-# kelastest2=datasumber[90:100,:]
-# kelastest3=datasumber[140:150,:]
-
-# labeltest1=datasumberlabel[40:50,:]
-# labeltest2=datasumberlabel[90:100,:]
-# labeltest3=datasumberlabel[140:150,:]
-
-# print kelas1.shape
-
-# datatraining=np.concatenate((kelas1,kelas2,kelas3),axis=0)
-
-# datalabel = np.concatenate((label1,label2,label3),axis=0)
-
-# datatest=np.concatenate((kelastest1,kelastest2,kelastest3),axis=0)
-# datalabeltest = np.concatenate((labeltest1,labeltest2,labeltest3),axis=0)
 
 # print datatraining.shape
 # print datalabel.shape

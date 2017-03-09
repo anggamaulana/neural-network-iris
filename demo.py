@@ -39,6 +39,12 @@ def train(x, t, V, W, bv, bw):
     Ev = sigmoid(A) * np.dot(W, Ew)
 
     # error untuk lapisan output di dot outer dengan hasil dari layer hidden
+    print "Z"
+    print Z
+    print "Z"
+     print "Ew"
+    print Ew
+    print "Ew"
     dW = np.outer(Z, Ew)
     # error untuk lapisan hidden di dot outer dengan hasil dari layer input
     dV = np.outer(x, Ev)
@@ -86,34 +92,34 @@ bw2 = np.zeros(n_out)
 params = [V,W,bv,bw]
 
 # split 120 training:30 testing
-datasumber = np.loadtxt('iris.data-feature.txt',delimiter=',')
-datasumberlabel = np.loadtxt('iris.data-feature-label.txt',delimiter=',')
+datatraining = np.loadtxt('iris.data-feature.txt',delimiter=',')
+datalabel = np.loadtxt('iris.data-feature-label.txt',delimiter=',')
 
-kelas1=datasumber[0:40,:]
-kelas2=datasumber[50:90,:]
-kelas3=datasumber[100:140,:]
+# kelas1=datasumber[0:40,:]
+# kelas2=datasumber[50:90,:]
+# kelas3=datasumber[100:140,:]
 
-label1=datasumberlabel[0:40,:]
-label2=datasumberlabel[50:90,:]
-label3=datasumberlabel[100:140,:]
+# label1=datasumberlabel[0:40,:]
+# label2=datasumberlabel[50:90,:]
+# label3=datasumberlabel[100:140,:]
 
-# Test data
-kelastest1=datasumber[40:50,:]
-kelastest2=datasumber[90:100,:]
-kelastest3=datasumber[140:150,:]
+# # Test data
+# kelastest1=datasumber[40:50,:]
+# kelastest2=datasumber[90:100,:]
+# kelastest3=datasumber[140:150,:]
 
-labeltest1=datasumberlabel[40:50,:]
-labeltest2=datasumberlabel[90:100,:]
-labeltest3=datasumberlabel[140:150,:]
+# labeltest1=datasumberlabel[40:50,:]
+# labeltest2=datasumberlabel[90:100,:]
+# labeltest3=datasumberlabel[140:150,:]
 
 # print kelas1.shape
 
-datatraining=np.concatenate((kelas1,kelas2,kelas3),axis=0)
+# datatraining=np.concatenate((kelas1,kelas2,kelas3),axis=0)
 
-datalabel = np.concatenate((label1,label2,label3),axis=0)
+# datalabel = np.concatenate((label1,label2,label3),axis=0)
 
-datatest=np.concatenate((kelastest1,kelastest2,kelastest3),axis=0)
-datalabeltest = np.concatenate((labeltest1,labeltest2,labeltest3),axis=0)
+# datatest=np.concatenate((kelastest1,kelastest2,kelastest3),axis=0)
+# datalabeltest = np.concatenate((labeltest1,labeltest2,labeltest3),axis=0)
 
 # print datatraining.shape
 # print datalabel.shape
@@ -144,7 +150,7 @@ for epoch in range(10000):
 print "PREDIKSI DATATEST"
 # print datatest
 # print datalabeltest
-print params
+# print params
 for i in range(datatest.shape[0]):
     print predict(datatest[i], *params)
 # print "prediksi baris ke 139: "

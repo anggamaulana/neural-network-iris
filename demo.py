@@ -15,6 +15,11 @@ np.random.seed(0)
 def sigmoid(x):
     return 1.0/(1.0 + np.exp(-x))
 
+
+def sigmoid_gradient(z):
+     return sigmoid(z) * (1 - sigmoid(z));
+
+
 def train(x, t, V, W, bv, bw):
 
     
@@ -33,7 +38,7 @@ def train(x, t, V, W, bv, bw):
     # eror pada lapisan output
     Ew = Y - t
     # error pada lapisan hidden A adalah matriks 4,dimensi 1 dikali dengan W=4x3 Ew=3,dimensi 1
-    Ev = sigmoid(A) * np.dot(W, Ew)
+    Ev = sigmoid_gradient(A) * np.dot(W, Ew)
 
     # error untuk lapisan output di dot outer dengan hasil dari layer hidden
     dW = np.outer(Z, Ew)
